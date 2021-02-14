@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>aec-details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let item of getData">
+    <img src={{item.flag}} />
+    <ion-card-header>
+      <ion-card-title>{{item.country_name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <h1><b>เมืองหลวง</b></h1>
+      <h2><b>{{item.capital}}</b></h2> <br />
+
+
+      <h1><b>ศาสนา</b></h1>
+      <h2><b>{{item.religion}}</b></h2> <br />
+
+
+      <h1><b>ประชากร</b></h1>
+      <h2><b>{{item.population}}</b></h2>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" color="light" (click)="Back()">BACK</ion-button>
+
+</ion-content>

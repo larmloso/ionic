@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>sign-in</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Toast Notification</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Username :</ion-label>
+      <ion-input type="text" maxlength="8" [(ngModel)]="getuser"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password :</ion-label>
+      <ion-input type="password" maxlength="8" [(ngModel)]="getpassword"></ion-input>
+    </ion-item>
+
+    <ion-radio-group allow-empty-selection="true" (ionChange)="radioHandler($event)">
+      <ion-list-header>
+        <ion-label>FOR OF RADIO</ion-label>
+      </ion-list-header>
+  
+      <ion-item *ngFor="let item of radio_data">
+        <ion-label>{{item.text}}</ion-label>
+        <ion-radio slot="start" value="{{item.value}}"></ion-radio>
+      </ion-item>
+
+    </ion-radio-group>
+
+    <ion-radio-group allow-empty-selection="true" (ionChange)="fishyHandler($event)">
+      <ion-list-header>
+        <ion-label>YOUR SELECTION : {{fish}}</ion-label>
+      </ion-list-header>
+
+      <ion-item *ngFor="let item of radio_mackerel">
+        <ion-label>{{item.text}}</ion-label>
+        <ion-radio slot="start" value="{{item.value}} "></ion-radio>
+      </ion-item>
+
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-button expand="full" (click)="openTost()">OK</ion-button>
+  <ion-button expand="full" color="light">BACK</ion-button>
+  
+</ion-content>
